@@ -363,7 +363,7 @@
     <!-- Event End -->
 
     <!-- Travel and Stay -->
-    <div class="container-fluid py-5" id="Gift">
+    <div class="container-fluid py-5" id="TRAVEL & STAY">
         <div class="container pt-5 pb-3">
             <div class="section-title position-relative text-center">
                 <h1 class="gift-font display-4">TRAVEL & STAY</h1>
@@ -372,25 +372,25 @@
             </div>
             <div class="row">
                 <div class="col-12 text-center mb-2">
-                    <p>
-
-                        Please click the link below to book a place to stay.
-                    </p>
+                    <p>For anyone travelling to London to join us, here are some recommendations. Please click the link below to book a place to stay.</p>
                     <!-- The action button -->
-                    <button class="action-btn">Book</button>
+                    <button class="travel-btn" id="travelBtn">Book</button>
+
+                    <!-- The popup overlay -->
+                    <div class="travel-overlay" id="travelOverlay">
+                        <div class="travel-popup" id="travel-popup">
+                            <div class="travel-content">
+                                <h4>Recommended Hotels</h4>
+                                <div class="button-container">
+                                    <a href="https://shorturl.at/9UBjZ" class="hotel-link-btn">Airbnb</a>
+                                    <button id="close-travel">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-                    <!-- The popup container -->
-                    <div class="popup-container" id="popup-container">
-                        <div class="popup-content">
-                            <span class="p-3" style="font-weight: bolder;">
-
-                            </span>
-                            <!-- Close Button -->
-                            <button id="close-popup" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
-                        </div>
-                    </div>
     </div>
     <!-- Travel and Stay -->
 
@@ -410,34 +410,36 @@
                             Please click the link below for our payment options.
                         </p>
                         <!-- The action button -->
-                        <button class="action-btn">Gift Us</button>
+                        <button class="action-btn" id="giftBtn">Gift Us</button>
                     </div>
                 </div>
             </div>
-                        <!-- The popup container -->
-                        <div class="popup-container" id="popup-container">
-                            <div class="popup-content">
-                                <span class="p-3" style="font-weight: bolder;">
-                                    <img src="img/icons8-paypal-logo-color-32.png" alt="Paypal">
-                                    <a href="https://paypal.me/michaelakpawu">@michaelakpawu</a>
-                                </span>
-                                <span class="p-3" style="font-weight: bolder;">
-                                    <br>
-                                    <img src="img/momo-logo.png" alt="MTN MoMo">
-                                    (+233) 240616992
-                                </span>
-                                <span class="p-3" style="font-weight: bolder;">
-                                    <br>
-                                    <img src="img/icons8-revolut-32.png" alt="Revolut">
-                                    <a href="https://revolut.me/gyems ">revolut.me/gyems </a>
-                                </span>
-                                <p style="font-size: small;">Kindly gift us through any of the payment methods above.
-                                     We are incredibly grateful for your generosity.
-                                </p>
-                                <!-- Close Button -->
-                                <button id="close-popup" style="background-color: #f44336; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">Close</button>
-                            </div>
+            <!-- The popup overlay -->
+            <div class="popup-overlay" id="popupOverlay">
+                <!-- The popup container -->
+                <div class="popup-container" id="popup-container">
+                    <div class="popup-content">
+                        <h3 class="mb-4">Payment Options</h3>
+                        <div class="payment-option">
+                            <img src="img/icons8-paypal-logo-color-32.png" alt="Paypal">
+                            <a href="https://paypal.me/michaelakpawu" class="payment-link">@michaelakpawu</a>
                         </div>
+                        <div class="payment-option">
+                            <img src="img/momo-logo.png" alt="MTN MoMo">
+                            <span class="payment-text">(+233) 240616992</span>
+                        </div>
+                        <div class="payment-option">
+                            <img src="img/icons8-revolut-32.png" alt="Revolut">
+                            <a href="https://revolut.me/gyems" class="payment-link">revolut.me/gyems</a>
+                        </div>
+                        <p class="thank-you-text">Kindly gift us through any of the payment methods above.
+                            We are incredibly grateful for your generosity.
+                        </p>
+                        <!-- Close Button -->
+                        <button id="close-popup">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
     <!-- GIFT End -->
 
@@ -451,32 +453,20 @@
                 <i class="far fa-heart text-dark"></i>
             </div>
 
-            <p style="text-align: center; font-weight: bolder;">Click the links below to fill out the RSVP</p>
+            <p style="text-align: center; font-weight: bolder;">Click the link below to fill out the RSVP</p>
 
-            <div class="row">
-                <div class="col-md-6 border-right border-primary">
-                    <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
-                        <img class="img-fluid mb-4" src="img/" alt="">
-                        <h4 class="mb-3">The Engagement</h4>
-                        <span class="px-3">
-                            <button class="action-btn">
-                                <a href="https://forms.gle/mvoARXWr9xUUU2pJ7" style="color: white; font-weight: bolder;">RSVP</a>
-                            </button>
-                        </span>
-                    </div>
-                </div>
+            <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <div class="text-center text-md-left ml-md-1">
+                    <div class="text-center mb-4">
                         <img class="img-fluid mb-4" src="img/" alt="">
                         <h4 class="mb-3">Civil Ceremony</h4>
                         <p class="mb-2">
                             <span class="px-3">
                                 <button class="action-btn">
-                                    <a href="https://forms.gle/sQM9Mmkw2Lb566Gq7"style="color: white; font-weight: bolder;">RSVP</a>
+                                    <a href="https://forms.gle/sQM9Mmkw2Lb566Gq7" style="color: white; font-weight: bolder;">RSVP</a>
                                 </button>
                             </span>
                         </p>
-
                     </div>
                 </div>
             </div>

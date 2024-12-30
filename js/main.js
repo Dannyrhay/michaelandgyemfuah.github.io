@@ -19,11 +19,11 @@
     $(".navbar-nav a").on('click', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
-            
+
             $('html, body').animate({
                 scrollTop: $(this.hash).offset().top - 45
             }, 1500, 'easeInOutExpo');
-            
+
             if ($(this).parents('.navbar-nav').length) {
                 $('.navbar-nav .active').removeClass('active');
                 $(this).closest('a').addClass('active');
@@ -53,8 +53,8 @@
 
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
@@ -98,28 +98,68 @@
             }
         }
     });
-    
+
 })(jQuery);
 
 // Get the action button and popup container elements
-const actionBtn = document.querySelector('.action-btn');
-const popupContainer = document.getElementById('popup-container');
-const closePopup = document.getElementById('close-popup');
+// Gift popup functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Gift popup
+    const giftBtn = document.getElementById('giftBtn');
+    const popupOverlay = document.getElementById('popupOverlay');
+    const closePopupBtn = document.getElementById('close-popup');
 
-// Add an event listener to the action button
-actionBtn.addEventListener('click', () => {
-    // Show the popup container by adding the active class
-    popupContainer.classList.add('active');
-});
+    if (giftBtn && popupOverlay && closePopupBtn) {
+        // Open gift popup
+        giftBtn.addEventListener('click', function() {
+            popupOverlay.style.display = 'flex';
+            void popupOverlay.offsetWidth;
+            popupOverlay.classList.add('active');
+        });
 
-// Add an event listener to the popup container for clicking outside the popup
-popupContainer.addEventListener('click', (e) => {
-    if (e.target === popupContainer) {
-        popupContainer.classList.remove('active');
+        // Close gift popup
+        function closeGiftPopup() {
+            popupOverlay.classList.remove('active');
+            setTimeout(() => {
+                popupOverlay.style.display = 'none';
+            }, 300);
+        }
+
+        closePopupBtn.addEventListener('click', closeGiftPopup);
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                closeGiftPopup();
+            }
+        });
+    }
+
+    // Travel popup
+    const travelBtn = document.getElementById('travelBtn');
+    const travelOverlay = document.getElementById('travelOverlay');
+    const closeTravelBtn = document.getElementById('close-travel');
+
+    if (travelBtn && travelOverlay && closeTravelBtn) {
+        // Open travel popup
+        travelBtn.addEventListener('click', function() {
+            travelOverlay.style.display = 'flex';
+            void travelOverlay.offsetWidth;
+            travelOverlay.classList.add('active');
+        });
+
+        // Close travel popup
+        function closeTravelPopup() {
+            travelOverlay.classList.remove('active');
+            setTimeout(() => {
+                travelOverlay.style.display = 'none';
+            }, 300);
+        }
+
+        closeTravelBtn.addEventListener('click', closeTravelPopup);
+        travelOverlay.addEventListener('click', function(e) {
+            if (e.target === travelOverlay) {
+                closeTravelPopup();
+            }
+        });
     }
 });
 
-// Add an event listener to the close button to hide the popup
-closePopup.addEventListener('click', () => {
-    popupContainer.classList.remove('active');
-});
