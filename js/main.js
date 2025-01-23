@@ -2,7 +2,7 @@
     "use strict";
 
     // Navbar on scrolling
-    $(window).scroll(function () {
+    $(window).on('scroll', {passive: true}, function () {
         if ($(this).scrollTop() > 200) {
             if (!$('.navbar-toggler').hasClass('collapsed')) {
                 // Close the navbar collapse on scroll
@@ -33,7 +33,7 @@
 
 
     // Scroll to Bottom
-    $(window).scroll(function () {
+    $(window).on('scroll', {passive: true}, function () {
         if ($(this).scrollTop() > 100) {
             $('.scroll-to-bottom').fadeOut('slow');
         } else {
@@ -56,14 +56,14 @@
 
 
     // Back to top button
-    $(window).scroll(function () {
+    $(window).on('scroll', {passive: true}, function () {
         if ($(this).scrollTop() > 200) {
             $('.back-to-top').fadeIn('slow');
         } else {
             $('.back-to-top').fadeOut('slow');
         }
     });
-    $('.back-to-top').click(function () {
+    $('.back-to-top').on('click', function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
             popupOverlay.style.display = 'flex';
             void popupOverlay.offsetWidth;
             popupOverlay.classList.add('active');
-        });
+        }, { passive: true });
 
         // Close gift popup
         function closeGiftPopup() {
@@ -125,12 +125,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }
 
-        closePopupBtn.addEventListener('click', closeGiftPopup);
+        closePopupBtn.addEventListener('click', closeGiftPopup, { passive: true });
         popupOverlay.addEventListener('click', function(e) {
             if (e.target === popupOverlay) {
                 closeGiftPopup();
             }
-        });
+        }, { passive: true });
     }
 
     // Travel popup
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             travelOverlay.style.display = 'flex';
             void travelOverlay.offsetWidth;
             travelOverlay.classList.add('active');
-        });
+        }, { passive: true });
 
         // Close travel popup
         function closeTravelPopup() {
@@ -154,12 +154,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }
 
-        closeTravelBtn.addEventListener('click', closeTravelPopup);
+        closeTravelBtn.addEventListener('click', closeTravelPopup, { passive: true });
         travelOverlay.addEventListener('click', function(e) {
             if (e.target === travelOverlay) {
                 closeTravelPopup();
             }
-        });
+        }, { passive: true });
     }
 });
 
